@@ -1,6 +1,6 @@
 package com.twu.calculator;
 
-public class Adder {
+public class Adder implements Operation {
     private double operand;
 
     public Adder(double operand) {

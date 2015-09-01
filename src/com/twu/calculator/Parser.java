@@ -11,7 +11,12 @@ public class Parser {
     public double parse() {
         String[] list = command.split(" ");
         if(list[0].equals("add")){
-            return 5.0;
+            double operand = Double.parseDouble(list[1]);
+            Calculator calculator = new Calculator(0.0);
+            Operation operation = new Adder(0.0);
+            calculator.performProcess(operation,operand);
+
+            return calculator.getResult();
         }
 
         return 0;
