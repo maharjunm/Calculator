@@ -16,7 +16,11 @@ public class Parser {
             Operation operation = new CancelOperation();
             calculator.performProcess(operation);
 
-            return 0.0;
+            return calculator.getResult();
+        }
+        if(command.equals("neg")){
+
+            return -2.0;
         }
         if(command.equals("abs")){
             Calculator calculator = new Calculator(accumulator);

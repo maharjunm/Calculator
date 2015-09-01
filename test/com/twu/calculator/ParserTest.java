@@ -69,4 +69,11 @@ public class ParserTest {
         assertEquals(2.0,parser.parse(),0.2d);
     }
 
+    @Test
+    public void shouldAcceptNegativeCommandPrintTheResult() {
+        Parser parser = new Parser("neg",2.0);
+
+        assertEquals(-2.0,parser.parse(),0.2d);
+    }
+
 }
