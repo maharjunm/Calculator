@@ -37,7 +37,12 @@ public class Parser {
             return calculator.getResult();
         }
         if(list[0].equals("divide")){
-            return Double.NaN;
+            double operand = Double.parseDouble(list[1]);
+            Calculator calculator = new Calculator(accumulator);
+            Operation operation = new Divider(operand);
+            calculator.performProcess(operation);
+
+            return calculator.getResult();
         }
 
         return 0;

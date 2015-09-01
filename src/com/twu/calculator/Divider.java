@@ -1,6 +1,6 @@
 package com.twu.calculator;
 
-public class Divider {
+public class Divider implements Operation {
 
     private double operand;
 
