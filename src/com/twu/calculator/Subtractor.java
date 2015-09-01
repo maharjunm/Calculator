@@ -1,7 +1,14 @@
 package com.twu.calculator;
 
 public class Subtractor {
-    public double performOperation() {
-        return 0;
+
+    private double operand;
+
+    public Subtractor(double operand) {
+        this.operand = operand;
+    }
+
+    public double performOperation(double accumulator) {
+        return accumulator - operand;
     }
 }

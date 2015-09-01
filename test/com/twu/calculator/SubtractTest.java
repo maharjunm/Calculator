@@ -8,8 +8,16 @@ public class SubtractTest {
 
     @Test
     public void shouldReturnTheValueAsZerowithoutPreInitiatedValue() {
-        Subtractor subtractor = new Subtractor();
+        Subtractor subtractor = new Subtractor(0.0);
 
-        assertEquals(0.0, subtractor.performOperation(), 0.2d);
+        assertEquals(0.0, subtractor.performOperation(0.0), 0.2d);
+    }
+
+
+    @Test
+    public void shouldReturnTheValueAsZerowithPreInitiatedValue() {
+        Subtractor subtractor = new Subtractor(1.0);
+
+        assertEquals(-1.0, subtractor.performOperation(0.0), 0.2d);
     }
 }
