@@ -1,0 +1,32 @@
+<project name="Calculator" default="run">
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="build"/>
+        <javac srcdir="src;test" destdir="build">
+
+            <classpath>
+                <pathelement path="lib/junit-4.11.jar"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="run">
+        <junit>
+            <classpath>
+                <pathelement path="lib/hamcrest-core-1.3.jar"/>
+                <pathelement location="lib/junit-4.11.jar"/>
+                <pathelement location="build"/>
+            </classpath>
+            <batchtest fork="yes">
+                <fileset dir="test">
+                    <include name="**/*Test*.java"/>
+                </fileset>
+            </batchtest>
+        </junit>
+    </target>
+
+</project>
