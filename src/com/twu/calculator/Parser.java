@@ -11,6 +11,10 @@ public class Parser {
     }
 
     public double parse() {
+        if(command.equals("cancel")){
+
+            return 0.0;
+        }
         String[] list = command.split(" ");
         if(list[0].equals("add")){
             double operand = Double.parseDouble(list[1]);

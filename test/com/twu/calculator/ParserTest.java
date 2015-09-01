@@ -55,4 +55,11 @@ public class ParserTest {
         assertEquals(Double.NaN,parser.parse(),0.2d);
     }
 
+    @Test
+    public void shouldAcceptCancelCommandPrintTheResult() {
+        Parser parser = new Parser("cancel",0.0);
+
+        assertEquals(0.0,parser.parse(),0.2d);
+    }
+
 }
