@@ -8,6 +8,6 @@ public class Adder implements Operation {
     }
 
     public double performOperation(double accumulator) {
-        return accumulator + operand;
+        return accumulator + this.operand;
     }
 }

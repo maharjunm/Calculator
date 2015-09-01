@@ -1,10 +1,12 @@
 package com.twu.calculator;
 
 public class Parser {
+    private double accumulator;
     private String command;
 
-    public Parser(String command) {
+    public Parser(String command, double initialValue) {
         this.command = command;
+        this.accumulator = initialValue;
 
     }
 
@@ -12,9 +14,9 @@ public class Parser {
         String[] list = command.split(" ");
         if(list[0].equals("add")){
             double operand = Double.parseDouble(list[1]);
-            Calculator calculator = new Calculator(0.0);
-            Operation operation = new Adder(0.0);
-            calculator.performProcess(operation,operand);
+            Calculator calculator = new Calculator(accumulator);
+            Operation operation = new Adder(operand);
+            calculator.performProcess(operation);
 
             return calculator.getResult();
         }

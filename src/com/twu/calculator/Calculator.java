@@ -8,8 +8,8 @@ public class Calculator {
         this.accumulator = initialValue;
     }
 
-    public void performProcess(Operation operation, double operand) {
-        this.accumulator = operation.performOperation(operand);
+    public void performProcess(Operation operation) {
+        this.accumulator = operation.performOperation(accumulator);
     }
 
     public double getResult() {
