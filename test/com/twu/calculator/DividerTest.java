@@ -12,4 +12,11 @@ public class DividerTest {
 
         assertEquals(Double.NaN, divider.performOperation(2.0), 0.2d);
     }
+
+    @Test
+    public void shouldReturnNaNWhenWeDivisionWithoutZero() {
+        Divider divider = new Divider(1.0);
+
+        assertEquals(2.0, divider.performOperation(2.0), 0.2d);
+    }
 }

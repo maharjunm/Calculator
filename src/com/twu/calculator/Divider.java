@@ -11,6 +11,6 @@ public class Divider {
     public double performOperation(double accumulator) {
         if(operand == 0)
             return Double.NaN;
-        return 0;
+        return accumulator / operand;
     }
 }
