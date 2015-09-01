@@ -34,4 +34,11 @@ public class ParserTest {
         assertEquals(0.0,parser.parse(),0.2d);
     }
 
+    @Test
+    public void shouldAcceptMultiplicationCommandPrintTheResult() {
+        Parser parser = new Parser("multiply 2",0.0);
+
+        assertEquals(0.0,parser.parse(),0.2d);
+    }
+
 }
