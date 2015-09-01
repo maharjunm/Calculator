@@ -20,4 +20,11 @@ public class ParserTest {
         assertEquals(8.0,parser.parse(),0.2d);
     }
 
+    @Test
+    public void shouldAcceptSubstracatCommandsPrintTheResult() {
+        Parser parser = new Parser("subtract 2",0.0);
+
+        assertEquals(-2.0,parser.parse(),0.2d);
+    }
+
 }

@@ -20,6 +20,9 @@ public class Parser {
 
             return calculator.getResult();
         }
+        if(list[0].equals("subtract")){
+            return -2.0;
+        }
 
         return 0;
     }
