@@ -48,4 +48,11 @@ public class ParserTest {
         assertEquals(4.0,parser.parse(),0.2d);
     }
 
+    @Test
+    public void shouldAcceptDivisionCommandPrintTheResultWithoutPreInitiatedValue() {
+        Parser parser = new Parser("divide 0.0",2.0);
+
+        assertEquals(Double.NaN,parser.parse(),0.2d);
+    }
+
 }

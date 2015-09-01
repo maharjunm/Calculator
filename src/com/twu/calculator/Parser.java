@@ -36,6 +36,9 @@ public class Parser {
 
             return calculator.getResult();
         }
+        if(list[0].equals("divide")){
+            return Double.NaN;
+        }
 
         return 0;
     }
