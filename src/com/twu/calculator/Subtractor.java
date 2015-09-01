@@ -1,6 +1,6 @@
 package com.twu.calculator;
 
-public class Subtractor {
+public class Subtractor implements Operation {
 
     private double operand;
 

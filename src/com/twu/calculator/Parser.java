@@ -21,7 +21,12 @@ public class Parser {
             return calculator.getResult();
         }
         if(list[0].equals("subtract")){
-            return -2.0;
+            double operand = Double.parseDouble(list[1]);
+            Calculator calculator = new Calculator(accumulator);
+            Operation operation = new Subtractor(operand);
+            calculator.performProcess(operation);
+
+            return calculator.getResult();
         }
 
         return 0;
