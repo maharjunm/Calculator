@@ -64,9 +64,9 @@ public class ParserTest {
 
     @Test
     public void shouldAcceptAbsoluteCommandPrintTheResult() {
-        Parser parser = new Parser("abs",1.0);
+        Parser parser = new Parser("abs",-2.0);
 
-        assertEquals(1.0,parser.parse(),0.2d);
+        assertEquals(2.0,parser.parse(),0.2d);
     }
 
 }

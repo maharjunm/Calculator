@@ -2,14 +2,9 @@ package com.twu.calculator;
 
 import static java.lang.Math.*;
 
-public class AbsoluteOperation {
-    private double operand;
+public class AbsoluteOperation implements Operation {
 
-    public AbsoluteOperation(double operand) {
-        this.operand = operand;
-    }
-
-    public double performOperation() {
-        return abs(operand);
+    public double performOperation(double accumulator) {
+        return abs(accumulator);
     }
 }

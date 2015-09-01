@@ -7,8 +7,8 @@ public class AbsoluteOperationTest {
 
     @Test
     public void shouldReturnPositiveValue() {
-        AbsoluteOperation absoluteOperation = new AbsoluteOperation(1.0);
+        AbsoluteOperation absoluteOperation = new AbsoluteOperation();
 
-        Assert.assertEquals(1.0,absoluteOperation.performOperatiaon(),0.2d);
+        Assert.assertEquals(1.0,absoluteOperation.performOperation(1.0),0.2d);
     }
 }

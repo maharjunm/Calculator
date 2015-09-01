@@ -19,8 +19,11 @@ public class Parser {
             return 0.0;
         }
         if(command.equals("abs")){
+            Calculator calculator = new Calculator(accumulator);
+            Operation operation = new AbsoluteOperation();
+            calculator.performProcess(operation);
 
-            return 1.0;
+            return calculator.getResult();
         }
         String[] list = command.split(" ");
         if(list[0].equals("add")){
