@@ -8,6 +8,6 @@ public class Multiplier {
     }
 
     public double performOperation(double accumulator) {
-        return 0;
+        return accumulator * operand;
     }
 }
