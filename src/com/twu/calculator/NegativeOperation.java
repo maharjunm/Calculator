@@ -1,7 +1,8 @@
 package com.twu.calculator;
 
-public class NegativeOperation {
-    public double performOPeration(double accumulator) {
+public class NegativeOperation implements Operation {
+    @Override
+    public double performOperation(double accumulator) {
         return -accumulator;
     }
 }
