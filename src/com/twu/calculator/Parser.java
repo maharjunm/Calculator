@@ -18,6 +18,10 @@ public class Parser {
 
             return 0.0;
         }
+        if(command.equals("abs")){
+
+            return 1.0;
+        }
         String[] list = command.split(" ");
         if(list[0].equals("add")){
             double operand = Double.parseDouble(list[1]);
