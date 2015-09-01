@@ -12,6 +12,9 @@ public class Parser {
 
     public double parse() {
         if(command.equals("cancel")){
+            Calculator calculator = new Calculator(accumulator);
+            Operation operation = new CancelOperation();
+            calculator.performProcess(operation);
 
             return 0.0;
         }
