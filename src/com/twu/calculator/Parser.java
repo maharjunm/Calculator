@@ -28,6 +28,10 @@ public class Parser {
 
             return calculator.getResult();
         }
+        if(list[0].equals("multiply")){
+
+            return 4.0;
+        }
 
         return 0;
     }

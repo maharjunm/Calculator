@@ -41,4 +41,11 @@ public class ParserTest {
         assertEquals(0.0,parser.parse(),0.2d);
     }
 
+    @Test
+    public void shouldAcceptMultiplicationCommandPrintTheResultWithPreInitiatedValue() {
+        Parser parser = new Parser("multiply 2",2.0);
+
+        assertEquals(4.0,parser.parse(),0.2d);
+    }
+
 }
