@@ -11,4 +11,11 @@ public class NegativeOperationTest {
 
         Assert.assertEquals(-2.0,negativeOperation.performOPeration(2.0),0.2d);
     }
+
+    @Test
+    public void shouldReturnThePositiveValueWhenWeGiveNegativeValue() {
+        NegativeOperation negativeOperation = new NegativeOperation();
+
+        Assert.assertEquals(2.0,negativeOperation.performOPeration(-2.0),0.2d);
+    }
 }
