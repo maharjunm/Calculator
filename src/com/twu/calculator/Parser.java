@@ -29,8 +29,12 @@ public class Parser {
             return calculator.getResult();
         }
         if(list[0].equals("multiply")){
+            double operand = Double.parseDouble(list[1]);
+            Calculator calculator = new Calculator(accumulator);
+            Operation operation = new Multiplier(operand);
+            calculator.performProcess(operation);
 
-            return 4.0;
+            return calculator.getResult();
         }
 
         return 0;

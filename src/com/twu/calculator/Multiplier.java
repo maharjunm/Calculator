@@ -1,6 +1,6 @@
 package com.twu.calculator;
 
-public class Multiplier {
+public class Multiplier implements Operation {
     private double operand;
 
     public Multiplier(double operand) {
