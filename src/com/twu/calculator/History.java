@@ -17,4 +17,8 @@ public class History {
     public Object getList() {
         return history;
     }
+
+    public Operation getNOperation(int i) {
+        return history.get(0);
+    }
 }

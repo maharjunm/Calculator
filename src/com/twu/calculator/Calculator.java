@@ -2,7 +2,7 @@ package com.twu.calculator;
 
 public class Calculator {
 
-    double accumulator;
+    private double accumulator;
 
     public Calculator(double initialValue) {
         this.accumulator = initialValue;

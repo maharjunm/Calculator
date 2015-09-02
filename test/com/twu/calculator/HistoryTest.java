@@ -19,4 +19,13 @@ public class HistoryTest {
 
         assertEquals(list,history.getList());
     }
+
+    @Test
+    public void shouldGetOperationFromHistoryWhenOneOperationIsNeeded() {
+        History history = new History();
+        Operation operation = new Adder(5.0);
+        history.add(operation);
+
+        assertEquals(operation,history.getNOperation(1));
+    }
 }
