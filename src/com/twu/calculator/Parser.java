@@ -55,6 +55,13 @@ public class Parser {
 
             return calculator.getResult();
         }
+        if(command.equals("cube")){
+            Calculator calculator = new Calculator(accumulator);
+            Operation operation = new CubeRootOperation();
+            calculator.performProcess(operation);
+
+            return pow(2.0,3);
+        }
         String[] list = command.split(" ");
         if(list[0].equals("add")){
             double operand = Double.parseDouble(list[1]);

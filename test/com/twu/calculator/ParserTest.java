@@ -91,12 +91,18 @@ public class ParserTest {
         assertEquals(4.0,parser.parse(),0.2d);
     }
 
-
     @Test
     public void shouldAcceptCuberootCommandPrintTheResult() {
         Parser parser = new Parser("cubert",2.0);
 
         assertEquals(cbrt(2.0),parser.parse(),0.2d);
+    }
+
+    @Test
+    public void shouldAcceptCubeCommandPrintTheResult() {
+        Parser parser = new Parser("cube",2.0);
+
+        assertEquals(pow(2.0,3),parser.parse(),0.2d);
     }
 
 }
