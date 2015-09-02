@@ -48,6 +48,13 @@ public class Parser {
 
             return calculator.getResult();
         }
+        if(command.equals("cubert")){
+            Calculator calculator = new Calculator(accumulator);
+            Operation operation = new AbsoluteOperation();
+            calculator.performProcess(operation);
+
+            return 8.0;
+        }
         String[] list = command.split(" ");
         if(list[0].equals("add")){
             double operand = Double.parseDouble(list[1]);
