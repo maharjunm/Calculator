@@ -96,7 +96,7 @@ public class ParserTest {
     public void shouldAcceptCuberootCommandPrintTheResult() {
         Parser parser = new Parser("cubert",2.0);
 
-        assertEquals(8.0,parser.parse(),0.2d);
+        assertEquals(cbrt(2.0),parser.parse(),0.2d);
     }
 
 }

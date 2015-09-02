@@ -50,10 +50,10 @@ public class Parser {
         }
         if(command.equals("cubert")){
             Calculator calculator = new Calculator(accumulator);
-            Operation operation = new AbsoluteOperation();
+            Operation operation = new CubeRootOperation();
             calculator.performProcess(operation);
 
-            return 8.0;
+            return calculator.getResult();
         }
         String[] list = command.split(" ");
         if(list[0].equals("add")){
