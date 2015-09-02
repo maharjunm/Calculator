@@ -1,7 +1,5 @@
 package com.twu.calculator;
 
-import static java.lang.Math.*;
-
 public class Parser {
     private double accumulator;
     private String command;
@@ -28,8 +26,11 @@ public class Parser {
             return calculator.getResult();
         }
         if(command.equals("sqrt")){
+            Calculator calculator = new Calculator(accumulator);
+            Operation operation = new SquareRootOperation();
+            calculator.performProcess(operation);
 
-            return sqrt(2.0);
+            return Math.sqrt(2.0);
         }
         if(command.equals("abs")){
             Calculator calculator = new Calculator(accumulator);

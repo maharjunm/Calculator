@@ -1,8 +1,10 @@
 package com.twu.calculator;
 
-public class SquareRootOperation {
+import static java.lang.Math.*;
+
+public class SquareRootOperation implements Operation {
 
     public double performOperation(double accumulator) {
-        return 0;
+        return sqrt(accumulator);
     }
 }
