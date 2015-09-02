@@ -84,4 +84,11 @@ public class ParserTest {
         assertEquals(sqrt(2.0),parser.parse(),0.2d);
     }
 
+    @Test
+    public void shouldAcceptSquareCommandPrintTheResult() {
+        Parser parser = new Parser("sqr",2.0);
+
+        assertEquals(4.0,parser.parse(),0.2d);
+    }
+
 }
