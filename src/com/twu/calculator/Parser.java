@@ -57,10 +57,10 @@ public class Parser {
         }
         if(command.equals("cube")){
             Calculator calculator = new Calculator(accumulator);
-            Operation operation = new CubeRootOperation();
+            Operation operation = new CubeOperation();
             calculator.performProcess(operation);
 
-            return pow(2.0,3);
+            return calculator.getResult();
         }
         String[] list = command.split(" ");
         if(list[0].equals("add")){
