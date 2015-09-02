@@ -112,4 +112,11 @@ public class ParserTest {
         assertEquals(pow(2.0,3),parser.parse(),0.2d);
     }
 
+    @Test
+    public void shouldNotAcceptInvalidCommandAndPrintPreviousValue() {
+        Parser parser = new Parser("cubesddsf",2.0);
+
+        assertEquals(2.0,parser.parse(),0.2d);
+    }
+
 }

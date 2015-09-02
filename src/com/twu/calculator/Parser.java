@@ -96,6 +96,6 @@ public class Parser {
             return calculator.getResult();
         }
 
-        return 0;
+        return accumulator;
     }
 }
