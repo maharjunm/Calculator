@@ -2,6 +2,7 @@ package com.twu.calculator;
 
 import org.junit.Test;
 
+import static java.lang.Math.*;
 import static org.junit.Assert.*;
 
 public class ParserTest {
@@ -74,6 +75,13 @@ public class ParserTest {
         Parser parser = new Parser("neg",2.0);
 
         assertEquals(-2.0,parser.parse(),0.2d);
+    }
+
+    @Test
+    public void shouldAcceptSqrtCommandPrintTheResult() {
+        Parser parser = new Parser("sqrt",2.0);
+
+        assertEquals(sqrt(2.0),parser.parse(),0.2d);
     }
 
 }
