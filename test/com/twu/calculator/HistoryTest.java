@@ -17,15 +17,28 @@ public class HistoryTest {
         List<Operation> list = new ArrayList<>();
         list.add(operation);
 
-        assertEquals(list,history.getList());
+        assertEquals(list, history.getList());
     }
 
     @Test
     public void shouldGetOperationFromHistoryWhenOneOperationIsNeeded() {
         History history = new History();
         Operation operation = new Adder(5.0);
+        Operation[] operations = {operation};
         history.add(operation);
 
-        assertEquals(operation,history.getNOperation(1));
+        assertArrayEquals(operations, history.getNOperation(1));
+    }
+
+    @Test
+    public void shouldGetOperationFromHistoryWhenTwoOperationIsNeeded() {
+        History history = new History();
+        Operation operation1 = new Adder(5.0);
+        Operation operation2 = new Adder(5.0);
+        history.add(operation1);
+        history.add(operation2);
+        Operation[] operations = {operation1, operation2};
+
+        assertArrayEquals(operations, history.getNOperation(2));
     }
 }

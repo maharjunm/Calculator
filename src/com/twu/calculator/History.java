@@ -9,7 +9,7 @@ public class History {
     History() {
         history = new ArrayList<>();
     }
-    
+
     public void add(Operation operation) {
         history.add(operation);
     }
@@ -18,7 +18,11 @@ public class History {
         return history;
     }
 
-    public Operation getNOperation(int i) {
-        return history.get(0);
+    public Operation[] getNOperation(int noOfOperations) {
+        Operation[] operations = new Operation[noOfOperations];
+        for (int i = history.size() - noOfOperations, index = 0; i < history.size() ; i++, index++) {
+            operations[index] = history.get(i);
+        }
+        return operations;
     }
 }
