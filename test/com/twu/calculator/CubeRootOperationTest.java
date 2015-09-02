@@ -12,4 +12,11 @@ public class CubeRootOperationTest {
 
         assertEquals(0.0, cubeRootOperation.performOpration(0.0), 0.2d);
     }
+
+    @Test
+    public void shouldReturnTheValueForNonZero() {
+        CubeRootOperation cubeRootOperation = new CubeRootOperation();
+
+        assertEquals(Math.cbrt(3.0), cubeRootOperation.performOpration(3.0), 0.2d);
+    }
 }
