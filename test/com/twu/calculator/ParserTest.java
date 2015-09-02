@@ -85,6 +85,13 @@ public class ParserTest {
     }
 
     @Test
+    public void shouldAcceptSqrtCommandPrintTheResultAsNANForNegativeValue() {
+        Parser parser = new Parser("sqrt",-2.0);
+
+        assertEquals(Double.NaN,parser.parse(),0.2d);
+    }
+
+    @Test
     public void shouldAcceptSquareCommandPrintTheResult() {
         Parser parser = new Parser("sqr",2.0);
 
