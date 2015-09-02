@@ -63,8 +63,14 @@ public class Parser {
             return calculator.getResult();
         }
         String[] list = command.split(" ");
+        double operand;
+        try {
+            operand = Double.parseDouble(list[1]);
+        }
+        catch (Exception e) {
+            return accumulator;
+        }
         if(list[0].equals("add")){
-            double operand = Double.parseDouble(list[1]);
             Calculator calculator = new Calculator(accumulator);
             Operation operation = new Adder(operand);
             calculator.performProcess(operation);
@@ -72,7 +78,7 @@ public class Parser {
             return calculator.getResult();
         }
         if(list[0].equals("subtract")){
-            double operand = Double.parseDouble(list[1]);
+
             Calculator calculator = new Calculator(accumulator);
             Operation operation = new Subtractor(operand);
             calculator.performProcess(operation);
@@ -80,7 +86,6 @@ public class Parser {
             return calculator.getResult();
         }
         if(list[0].equals("multiply")){
-            double operand = Double.parseDouble(list[1]);
             Calculator calculator = new Calculator(accumulator);
             Operation operation = new Multiplier(operand);
             calculator.performProcess(operation);
@@ -88,7 +93,6 @@ public class Parser {
             return calculator.getResult();
         }
         if(list[0].equals("divide")){
-            double operand = Double.parseDouble(list[1]);
             Calculator calculator = new Calculator(accumulator);
             Operation operation = new Divider(operand);
             calculator.performProcess(operation);

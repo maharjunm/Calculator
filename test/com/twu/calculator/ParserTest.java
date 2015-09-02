@@ -119,4 +119,11 @@ public class ParserTest {
         assertEquals(2.0,parser.parse(),0.2d);
     }
 
+    @Test
+    public void shouldNotAcceptInvalidCommandAndPrintPreviousValue1() {
+        Parser parser = new Parser("add add 5",2.0);
+
+        assertEquals(2.0,parser.parse(),0.2d);
+    }
+
 }
