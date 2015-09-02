@@ -11,7 +11,7 @@ public class ParserTest {
     public void shouldAcceptAddCommandsPrintTheResult() {
         Parser parser = new Parser("add 5", 2.0);
 
-        assertEquals(5.0,parser.parse(),0.2d);
+        assertEquals(7.0,parser.parse(),0.2d);
     }
 
     @Test

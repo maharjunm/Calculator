@@ -12,4 +12,11 @@ public class SquareOperationTest {
 
         assertEquals(0.0, squareOperation.performOperation(0.0), 0.2d);
     }
+
+    @Test
+    public void shouldReturnTheForNonZeroValues() {
+        SquareOperation squareOperation = new SquareOperation();
+
+        assertEquals(4.0, squareOperation.performOperation(2.0), 0.2d);
+    }
 }

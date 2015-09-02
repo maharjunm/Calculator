@@ -32,11 +32,14 @@ public class Parser {
             Operation operation = new SquareRootOperation();
             calculator.performProcess(operation);
 
-            return sqrt(2.0);
+            return calculator.getResult();
         }
         if(command.equals("sqr")){
+            Calculator calculator = new Calculator(accumulator);
+            Operation operation = new SquareOperation();
+            calculator.performProcess(operation);
 
-            return 4.0;
+            return calculator.getResult();
         }
         if(command.equals("abs")){
             Calculator calculator = new Calculator(accumulator);

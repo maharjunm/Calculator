@@ -1,7 +1,9 @@
 package com.twu.calculator;
 
-public class SquareOperation {
+import static java.lang.Math.*;
+
+public class SquareOperation implements Operation {
     public double performOperation(double accumulator) {
-        return 0;
+        return pow(accumulator, 2);
     }
 }
