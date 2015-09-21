@@ -25,4 +25,11 @@ public class History {
         }
         return operations;
     }
+
+    public boolean clear() {
+        history = new ArrayList<>();
+        if (history.size()== 0)
+            return true;
+        return false;
+    }
 }

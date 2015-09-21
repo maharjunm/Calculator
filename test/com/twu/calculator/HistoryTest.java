@@ -41,4 +41,11 @@ public class HistoryTest {
 
         assertArrayEquals(operations, history.getNOperation(2));
     }
+
+    @Test
+    public void shouldClearItself() {
+        History history = new History();
+
+        assertTrue(history.clear());
+    }
 }
