@@ -12,4 +12,12 @@ public class CalculatorTest {
 
         assertEquals(0.0, calculator.getResult(), 0.00d);
     }
+
+    @Test
+    public void shouldPerformTheOperation() {
+        Calculator calculator = new Calculator(0.0);
+        calculator.performProcess(new Adder(1.0));
+
+        assertEquals(1.0, calculator.getResult(), 0.00d);
+    }
 }
