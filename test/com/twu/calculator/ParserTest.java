@@ -126,4 +126,12 @@ public class ParserTest {
         assertEquals(2.0,parser.parse(),0.2d);
     }
 
+    @Test
+    public void shouldReturnTheValueForRepeat() {
+        Parser parser = new Parser("Repeat 0",2.0);
+        parser.parse();
+
+        assertEquals(2.0,parser.parse(),0.2d);
+    }
+
 }
