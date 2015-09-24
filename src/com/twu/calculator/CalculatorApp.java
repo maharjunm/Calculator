@@ -24,7 +24,9 @@ public class CalculatorApp {
     }
 
     public void start() {
-        String input = userInput.getInput();
-        display.print(""+parser.parse(input));
+        do {
+            String input = userInput.getInput();
+            display.print("" + parser.parse(input));
+        }while(true);
     }
 }

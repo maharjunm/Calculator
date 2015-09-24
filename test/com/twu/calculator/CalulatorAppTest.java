@@ -64,4 +64,19 @@ public class CalulatorAppTest {
 
         verify(display, times(1)).print("" + parser.parse(userInput.getInput()));
     }
+
+    @Test
+    public void shouldExitTheApplicationWhenWeChooseExitFromTheWhileLoop() {
+        exit.expectSystemExit();
+        Display display = mock(Display.class);
+        UserInput userInput = mock(UserInput.class);
+        Parser parser = mock(Parser.class);
+        CalculatorApp calculatorApp = new CalculatorApp(display, userInput, parser);
+
+        when(userInput.getInput()).thenReturn("exit");
+        when(parser.parse(userInput.getInput())).thenCallRealMethod();
+        calculatorApp.start();
+
+        verify(display, times(1)).print("" + parser.parse(userInput.getInput()));
+    }
 }
