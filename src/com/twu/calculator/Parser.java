@@ -24,6 +24,9 @@ public class Parser {
 
             return calculator.getResult();
         }
+        if (command.equals("exit")) {
+            System.exit(0);
+        }
         if (command.equals("sqrt")) {
             Operation operation = new SquareRootOperation();
             calculator.performProcess(operation);

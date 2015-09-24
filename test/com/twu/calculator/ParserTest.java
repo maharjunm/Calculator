@@ -1,6 +1,8 @@
 package com.twu.calculator;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.contrib.java.lang.system.ExpectedSystemExit;
 
 import static java.lang.Math.*;
 import static org.junit.Assert.*;
@@ -139,6 +141,17 @@ public class ParserTest {
         parser.parse("add 1");
 
         assertEquals(3.0, parser.parse("repeat 1"), 0.2d);
+    }
+
+    @Rule
+    public ExpectedSystemExit exit = ExpectedSystemExit.none();
+
+    @Test
+    public void shouldExitFromTheApplication() {
+        exit.expectSystemExit();
+
+        Parser parser = new Parser(0.0);
+        parser.parse("exit");
     }
 
 }
