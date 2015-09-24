@@ -25,6 +25,6 @@ public class CalculatorApp {
 
     public void start() {
         String input = userInput.getInput();
-        parser.parse(input);
+        display.print(""+parser.parse(input));
     }
 }

@@ -30,4 +30,18 @@ public class CalulatorAppTest {
 
         verify(parser, times(1)).parse(userInput.getInput());
     }
+
+    @Test
+    public void shouldPrintTheOutput() {
+        Display display = mock(Display.class);
+        UserInput userInput = mock(UserInput.class);
+        Parser parser = mock(Parser.class);
+        CalculatorApp calculatorApp = new CalculatorApp(display, userInput, parser);
+
+        when(userInput.getInput()).thenReturn("Maharjun");
+        when(parser.parse(userInput.getInput())).thenReturn(0.0);
+        calculatorApp.start();
+
+        verify(display, times(1)).print(""+parser.parse(userInput.getInput()));
+    }
 }
