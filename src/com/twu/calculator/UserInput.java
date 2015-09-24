@@ -10,6 +10,6 @@ public class UserInput {
     }
 
     public String getInput() {
-        return scanner.next();
+        return scanner.nextLine();
     }
 }

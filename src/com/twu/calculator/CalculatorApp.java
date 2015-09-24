@@ -19,14 +19,14 @@ public class CalculatorApp {
         UserInput userInput = new UserInput(new Scanner(System.in));
         Display display = new Display(new PrintStream(System.out));
         Parser parser = new Parser(0.0);
-        CalculatorApp calculatorApp =new CalculatorApp(display,userInput, parser);
+        CalculatorApp calculatorApp = new CalculatorApp(display, userInput, parser);
         calculatorApp.start();
     }
 
     public void start() {
         do {
             String input = userInput.getInput();
-            display.print("" + parser.parse(input));
-        }while(true);
+            display.print("" + parser.parse(input) + "\n");
+        } while (true);
     }
 }
