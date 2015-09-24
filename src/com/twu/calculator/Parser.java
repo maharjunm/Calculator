@@ -3,60 +3,52 @@ package com.twu.calculator;
 import static java.lang.Math.*;
 
 public class Parser {
-    private double accumulator;
-    private String command;
+    Calculator calculator;
+    Operation operation;
 
-    public Parser(String command, double initialValue) {
-        this.command = command;
-        this.accumulator = initialValue;
+    public Parser(double initialValue) {
+        calculator = new Calculator(initialValue);
 
     }
 
-    public double parse() {
-        if(command.equals("cancel")){
-            Calculator calculator = new Calculator(accumulator);
+    public double parse(String command) {
+        if (command.equals("cancel")) {
             Operation operation = new CancelOperation();
             calculator.performProcess(operation);
 
             return calculator.getResult();
         }
-        if(command.equals("neg")){
-            Calculator calculator = new Calculator(accumulator);
+        if (command.equals("neg")) {
             Operation operation = new NegativeOperation();
             calculator.performProcess(operation);
 
             return calculator.getResult();
         }
-        if(command.equals("sqrt")){
-            Calculator calculator = new Calculator(accumulator);
+        if (command.equals("sqrt")) {
             Operation operation = new SquareRootOperation();
             calculator.performProcess(operation);
 
             return calculator.getResult();
         }
-        if(command.equals("sqr")){
-            Calculator calculator = new Calculator(accumulator);
+        if (command.equals("sqr")) {
             Operation operation = new SquareOperation();
             calculator.performProcess(operation);
 
             return calculator.getResult();
         }
-        if(command.equals("abs")){
-            Calculator calculator = new Calculator(accumulator);
+        if (command.equals("abs")) {
             Operation operation = new AbsoluteOperation();
             calculator.performProcess(operation);
 
             return calculator.getResult();
         }
-        if(command.equals("cubert")){
-            Calculator calculator = new Calculator(accumulator);
+        if (command.equals("cubert")) {
             Operation operation = new CubeRootOperation();
             calculator.performProcess(operation);
 
             return calculator.getResult();
         }
-        if(command.equals("cube")){
-            Calculator calculator = new Calculator(accumulator);
+        if (command.equals("cube")) {
             Operation operation = new CubeOperation();
             calculator.performProcess(operation);
 
@@ -66,40 +58,46 @@ public class Parser {
         double operand;
         try {
             operand = Double.parseDouble(list[1]);
+        } catch (Exception e) {
+            return calculator.getResult();
         }
-        catch (Exception e) {
-            return accumulator;
-        }
-        if(list[0].equals("add")){
-            Calculator calculator = new Calculator(accumulator);
+        if (list[0].equals("add")) {
             Operation operation = new Adder(operand);
             calculator.performProcess(operation);
 
             return calculator.getResult();
         }
-        if(list[0].equals("subtract")){
+        if (list[0].equals("subtract")) {
 
-            Calculator calculator = new Calculator(accumulator);
             Operation operation = new Subtractor(operand);
             calculator.performProcess(operation);
 
             return calculator.getResult();
         }
-        if(list[0].equals("multiply")){
-            Calculator calculator = new Calculator(accumulator);
+        if (list[0].equals("multiply")) {
             Operation operation = new Multiplier(operand);
             calculator.performProcess(operation);
 
             return calculator.getResult();
         }
-        if(list[0].equals("divide")){
-            Calculator calculator = new Calculator(accumulator);
+        if (list[0].equals("divide")) {
             Operation operation = new Divider(operand);
             calculator.performProcess(operation);
 
             return calculator.getResult();
         }
+        if (list[0].equals("repeat")) {
+            if (Integer.parseInt(list[1]) == 0) {
+                return calculator.getResult();
+            }
+            double result = calculator.getResult();
+            Operation[] operations = calculator.history.getNOperation(Integer.parseInt(list[1]));
+            for (int i = 0; i < operations.length; i++) {
+                result += operations[i].performOperation(result);
+            }
+            return result;
+        }
 
-        return accumulator;
+        return calculator.getResult();
     }
 }

@@ -1,7 +1,5 @@
 package com.twu.calculator;
 
-import java.util.ArrayList;
-
 public class Calculator {
 
     private double accumulator;
@@ -12,8 +10,8 @@ public class Calculator {
     }
 
     public void performProcess(Operation operation) {
-        this.accumulator = operation.performOperation(accumulator);
         history.add(operation);
+        this.accumulator = operation.performOperation(accumulator);
     }
 
     public double getResult() {
