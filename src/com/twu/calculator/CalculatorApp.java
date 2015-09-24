@@ -7,8 +7,10 @@ public class CalculatorApp {
 
     private final Display display;
     private final UserInput userInput;
+    private final Parser parser;
 
-    public CalculatorApp(Display display, UserInput userInput) {
+    public CalculatorApp(Display display, UserInput userInput, Parser parser) {
+        this.parser = parser;
         this.display = display;
         this.userInput = userInput;
     }
@@ -16,11 +18,13 @@ public class CalculatorApp {
     public static void main(String[] args) {
         UserInput userInput = new UserInput(new Scanner(System.in));
         Display display = new Display(new PrintStream(System.out));
-        CalculatorApp calculatorApp =new CalculatorApp(display,userInput);
+        Parser parser = new Parser(0.0);
+        CalculatorApp calculatorApp =new CalculatorApp(display,userInput, parser);
         calculatorApp.start();
     }
 
     public void start() {
         String input = userInput.getInput();
+        parser.parse(input);
     }
 }
